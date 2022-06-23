@@ -6,28 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Looped</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h2>My Playlist</h2>
-    <ul class="artists">
-        <% for(let i=0; i < artists.length; i++) {%>
-        <li class="artist">
-            <span><%= artists[i].song %></span> by 
-            <span><%= artists[i].artist %></span>
-            <span><%= artists[i].likes %></span>
-            <span class='fa fa-thumbs-up'></span>
-            <span class='fa fa-trash'></span>
-        </li>
-        <% } %>
-    </ul>
+    <h1 data-position="header">Looped</h1>
+    <section data-position="playlist">
+        <h2>My Playlist</h2>
+        <ul class="artists">
+            <% for(let i=0; i < artists.length; i++) {%>
+            <li class="artist">
+                <span><%= artists[i].song %></span> by 
+                <span><%= artists[i].artist %></span>
+                <span><%= artists[i].likes %></span>
+                <span class='fa fa-thumbs-up'></span>
+                <span class='fa fa-trash'></span>
+            </li>
+            <% } %>
+        </ul>
+    </section>
     
-    <h2>Add a song</h2>
-        <form action="/addSong" method="POST">
-        <input type="text" placeholder="song title" name="song">
-        <input type="text" placeholder="artist" name="artist">
-        <button type="submit">Submit</button>
-      </form>
+    
+    <section data-position="add-song">
+        <h2>Add a Song</h2>
+                <form action="/addSong" method="POST">
+                <input type="text" placeholder="Song Title" name="song">
+                <input type="text" placeholder="Artist" name="artist">
+                <button type="submit">Submit</button>
+              </form>
+    </section>
+    
 
     <script src="/main.js"></script>
 </body>

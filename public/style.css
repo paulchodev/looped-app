@@ -19,13 +19,51 @@
 /******************************************
 /* BASE STYLES
 /*******************************************/
-/* * {
-     margin: 0;
-     padding: 0;
-}      */
-body {
-    font-size: 16px;
+html {
+    font-size: 125%;
+    line-height: 1.4;
     font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto 2fr;
+    grid-template-areas: 
+    "header"
+    "playlist"
+    "add-song";
+    gap: 1rem;
+    margin: 0;
+    padding: 1rem;
+    background-image: linear-gradient(grey,white);
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+
+[data-position="header"] {
+    grid-area: header;
+}
+
+[data-position="playlist"] {
+    grid-area: playlist;
+}
+
+[data-position="add-song"] {
+    grid-area: add-song;
+}
+  
+[data-position] {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+h1,
+h2 {
+  margin: 0;
 }
 /******************************************
 /* LAYOUT
